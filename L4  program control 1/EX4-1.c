@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#define Range 3
+#define Range 3  //可改 Q:為什麼要宣告變數在這裡?
 
 int main()
 {
