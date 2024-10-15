@@ -8,12 +8,15 @@
 int main( void )
 {
    printf( "Enter two integers, and I will tell you\n" );
-   printf( "the relationships they satisfy: " );
+   printf( "the relationships they satisfy: " );  // printf("the relationships they satisfy:\n");
 
    int num1; // first number to be read from user
    int num2; // second number to be read from user
    
    scanf( "%d %d", &num1, &num2 ); // read two integers
+
+   /*scanf("%d", &num1);
+     scanf("%d", &num2);*/
    
    if ( num1 == num2 ) {                          
       printf( "%d is equal to %d\n", num1, num2 );
