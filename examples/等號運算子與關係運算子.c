@@ -1,6 +1,7 @@
 // Fig. 2.13: fig02_13.c
 // Using if statements, relational 
 // operators, and equality operators
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 // function main begins program execution
