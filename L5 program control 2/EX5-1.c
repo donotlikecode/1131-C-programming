@@ -10,7 +10,7 @@ int main()
     while (HP < 100)
     {
         HP++;
-        printf("HP=$.1f\n", HP);
+        printf("HP=%.1f\n", HP);
     }
 
     for (int HP = 0; HP < 100; HP++)
