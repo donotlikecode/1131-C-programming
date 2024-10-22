@@ -21,7 +21,7 @@ int main()
         if (i == key)
         {
             printf("got key=%d\n", key);
-            continue;
+            continue; //continue會把當次迴圈後面的東西跳過
         }
     }
 }
