@@ -13,7 +13,7 @@ int main()
         printf("HP=%.1f\n", HP);
     }
 
-    for (int HP = 0; HP < 100; HP++)
+    for (int HP = 0; HP < 100; HP++) //跑完while之後重設HP為0
     {
         printf("HP=%i\n", HP);
     }
