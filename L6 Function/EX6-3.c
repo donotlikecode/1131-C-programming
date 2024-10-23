@@ -40,9 +40,9 @@ int main()
     a.N = 3;
     for (int i = 0; i < a.N; i++)
     {
-        a.f[i] = rand() % 10;
+        a.f[i] = rand() % 10; //random取0~9塞進去
         printf("a%i=%.2f\n", i + 1, a.f[i]);
     }
     min_data = min(a);
-    printf("min_i=%i,min=%f", min_data.ind, min_data.min_f);
+    printf("min_i=%i,min=%f", min_data.ind, min_data.min_f); //小心不要印錯
 }
