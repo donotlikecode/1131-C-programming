@@ -17,16 +17,16 @@ int main()
     printf("%.1f^2 =%.1f\n", f, square(f)); //%1.f小數點後一位  //呼叫square函數然後把他的output印出來
 
 
-    float g[3] = { 1,2,3};
+    float g[3] = { 1,2,3 };
     printf("請輸入三個數字，我們將找出其中最大的數字!!\n");
     for (int i = 0; i < 3; i = i + 1) {
-        printf("請輸入第%d個數字\n",i+1);
+        printf("請輸入第%d個數字\n", i + 1);
         scanf("%f", &g[i]);   // 傳入每個 g 元素的地址
     }
     for (int j = 0; j < 3; j++) {
         printf("%f ", g[j]);
     }
-    printf("max =%.1f\n", max(g));        //呼叫max函數然後把他的output印出來
+    printf("\nmax =%.1f\n", max(g));        //呼叫max函數然後把他的output印出來
     return 0;
 }
 
