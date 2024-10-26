@@ -1,4 +1,6 @@
-`#define _CRT_SECURE_NO_WARNINGS
+**範例6-1:**
+```C
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 float square(float a);
@@ -30,4 +32,7 @@ float max(float a[3])
     }
 
     return max_f;
-}`
+}
+```
+
+**範例6-1:**
