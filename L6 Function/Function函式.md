@@ -15,6 +15,7 @@ int main()
  // printf("請輸入一個數字，我們來算一下平方\n");
  // scanf("%f", &f);
     printf("%.1f^2 =%.1f\n", f, square(f)); //%1.f小數點後一位  //呼叫square函數然後把他的output印出來
+
     float g[3] = { 1,2,3 };
     printf("max =%.1f\n", max(g));        //呼叫max函數然後把他的output印出來
 }
