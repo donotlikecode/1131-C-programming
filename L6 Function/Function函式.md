@@ -1,7 +1,7 @@
 # function
 
 
-**範例6-1: square and max**
+**範例6-1: square and max 多加了讓使用者輸入的功能**
 ```C
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -9,15 +9,25 @@
 float square(float a); //宣告function的原型
 float max(float a[3]); //宣告function的原型
 
-int main()  
+int main()
 {
-    float f = 2;
- // printf("請輸入一個數字，我們來算一下平方\n");
- // scanf("%f", &f);
+    float f = 0;
+    printf("請輸入一個數字，我們來算一下平方\n");
+    scanf("%f", &f);
     printf("%.1f^2 =%.1f\n", f, square(f)); //%1.f小數點後一位  //呼叫square函數然後把他的output印出來
 
-    float g[3] = { 1,2,3 };
+
+    float g[3] = { 1,2,3};
+    printf("請輸入三個數字，我們將找出其中最大的數字!!\n");
+    for (int i = 0; i < 3; i = i + 1) {
+        printf("請輸入第%d個數字\n",i+1);
+        scanf("%f", &g[i]);   // 傳入每個 g 元素的地址
+    }
+    for (int j = 0; j < 3; j++) {
+        printf("%f ", g[j]);
+    }
     printf("max =%.1f\n", max(g));        //呼叫max函數然後把他的output印出來
+    return 0;
 }
 
 float square(float a)
