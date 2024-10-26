@@ -1,31 +1,34 @@
-**範例6-1:**
+# function
+
+
+**範例6-1: square and max**
 ```C
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-float square(float a);
-float max(float a[3]);
+float square(float a); //宣告function的原型
+float max(float a[3]); //宣告function的原型
 
-int main()
+int main()  
 {
     float f = 2;
-    printf("%.1f^2 =%.1f\n", f, square(f));
+    printf("%.1f^2 =%.1f\n", f, square(f)); //%1.f小數點後一位  //呼叫square函數然後把他的output印出來
     float g[3] = { 1,2,3 };
-    printf("max =%.1f\n", max(g));
+    printf("max =%.1f\n", max(g));        //呼叫max函數然後把他的output印出來
 }
 
 float square(float a)
 {
-    return a * a;
+    return a * a;     //輸入浮點數 輸出浮點數
 }
 
-float max(float a[3])
+float max(float a[3])     //輸入array 每個都是浮點數  輸出也是一個浮點數
 {
-    float max_f;
-    max_f = a[0];
+    float max_f;          //指定資料型態 max_f
+    max_f = a[0];           //設第一個為初始值
     for (int i = 1; i < 3; i++)
     {
-        if (a[i] > max_f)
+        if (a[i] > max_f)   //逐一檢查 如果比現在的大就把max_f換成大的那個
         {
             max_f = a[i];
         }
