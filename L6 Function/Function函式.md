@@ -54,7 +54,7 @@ float max(float a[3])     //輸入array 每個都是浮點數  輸出也是一�
 > 1.合法的呼叫square(2) 是合法的，但不會儲存或顯示結果。
 > 2.需要使用結果時最好將結果儲存到變數中或直接在印出時使用它。
 
-**範例6-2:**
+**範例6-2:從別的地方引入函式**
 ```C
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -78,7 +78,7 @@ float square(float a)
 }
 ```
 
-**範例6-3:**
+**範例6-3:引數和回傳可以是Struct**
 ```C
 #include <stdio.h>
 #include <stdlib.h>
