@@ -94,13 +94,17 @@ struct index_num  //用來儲存查找到的最小值 min_f 和其索引 ind
     int ind;
     float min_f;
 };
-index_num min(min_arrary); //宣告函式
+index_num min(min_arrary); //宣告min這個函式 引數是min_arrary這個struct 回傳的是index_num這個Struct
 
 index_num min(min_arrary input)
 {
     index_num output;
-    output.min_f = input.f[0];
-    output.ind = 0;
+    output.min_f = input.f[0];    /*output 是 index_num 型別的變數。
+                                  index_num 結構體中包含兩個成員變數：ind（整數型別）和 min_f（浮點數型別）。
+                                  因此，用 output.min_f 來存取 index_num 結構中的 min_f 成員。*/
+    output.ind = 0;               /*input 是 min_arrary 型別的變數。
+                                  min_arrary 結構體包含一個陣列成員 f，其類型是 float[3]，即一個包含 3 個 float 的陣列。
+                                  因此，用 input.f[0] 來存取 f 陣列的第 0 個元素*/
     for (int i = 1; i < 3; i++)
     {
         if (input.f[i] < output.min_f)
@@ -117,7 +121,9 @@ int main()
 {
     min_arrary a;
     index_num min_data;
-    srand(time(NULL));
+    srand(time(NULL));  /*srand 是 C/C++ 的標準函式，用來設定隨機數生成器的「種子」。
+                         這個種子值決定了隨機數序列的起點。如果種子相同，每次產生的隨機數序列都會相同*/
+
 
     a.N = 3;
     for (int i = 0; i < a.N; i++)
