@@ -123,7 +123,7 @@ int main()
     index_num min_data;
     srand(time(NULL));  /*srand 是 C/C++ 的標準函式，用來設定隨機數生成器的「種子」。
                          這個種子值決定了隨機數序列的起點。如果種子相同，每次產生的隨機數序列都會相同*/
-
+                         //註解掉這行就不會隨機了
 
     a.N = 3;
     for (int i = 0; i < a.N; i++)
@@ -137,3 +137,72 @@ int main()
 ```
 >Note:
 >1. 即使兩個結構體擁有相同的成員（相同的名稱和類型），如果它們的順序不同，這些結構體仍然被視為不同的型別。
+>2.
+
+**範例6-4:運用header file and cpp**
+
+把6-3的程式拆出header file(.h)和.cpp
+
+game_lib.h(用來存資料、宣告函式)
+```C
+#pragma once
+struct min_arrary
+{
+    float f[3];
+    int N = 3;
+};
+struct index_num
+{
+    int ind;
+    float min_f;
+};
+index_num min(min_arrary);
+```
+>Note
+>1. #pragma once 是一個預處理指令，用於防止頭文件被多次包含。在 C 和 C++ 編程中，如果同一個頭文件被多次包含，可能會導致重複定義的錯誤。使用 #pragma once 可以確保該頭文件在一個編譯單元中只被包含一次當編譯器第一次遇到包含這個頭文件的指令時，它會處理這個文件。在後續的包含指令中，如果編譯器再次遇到這個頭文件，它會跳過處理，從而避免重複包含。
+
+game_lib.cpp(函式寫在這裡面)
+```C
+#include "game_lib.h"  //把header file引進來
+
+index_num min(min_arrary input)
+{
+    index_num output;
+    output.min_f = input.f[0];
+    output.ind = 0;
+    for (int i = 1; i < 3; i++)
+    {
+        if (input.f[i] < output.min_f)
+        {
+            output.min_f = input.f[i];
+            output.ind = i;
+        }
+    }
+
+    return output;
+}
+```
+
+main.cpp
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "game_lib.h"
+
+int main()
+{
+    min_arrary a;
+    index_num min_data;
+    srand(time(NULL));
+
+    a.N = 3;
+    for (int i = 0; i < a.N; i++)
+    {
+        a.f[i] = rand() % 10;
+        printf("a%i=%.2f\n", i + 1, a.f[i]);
+    }
+    min_data = min(a);
+    printf("min_i=%i,min=%f", min_data.ind, min_data.min_f);
+}
+```
