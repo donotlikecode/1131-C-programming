@@ -84,17 +84,17 @@ float square(float a)
 #include <stdlib.h>
 #include <time.h>
 
-struct min_arrary
+struct min_arrary  //包含一個長度為 3 的浮點數陣列 f 和整數 N，其中 N 預設為 3，表示陣列長度
 {
     float f[3];
     int N = 3;
 };
-struct index_num
+struct index_num  //用來儲存查找到的最小值 min_f 和其索引 ind
 {
     int ind;
     float min_f;
 };
-index_num min(min_arrary);
+index_num min(min_arrary); //宣告函式
 
 index_num min(min_arrary input)
 {
