@@ -255,6 +255,22 @@ index_num min(min_arrary input)
     return output;
 }
 ```
+game_lib.h(用來存資料、宣告函式)
+```C
+#pragma once
+struct min_arrary
+{
+    float f[3];
+    int N = 3;
+};
+struct index_num
+{
+    int ind;
+    float min_f;
+};
+index_num min(min_arrary);
+```
+
 **範例6-6:extern variables**
 
 main.cpp
