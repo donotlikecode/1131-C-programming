@@ -287,7 +287,7 @@ int main()
 }
 ```
 
-S_function.h(用來存資料、宣告函式)
+S_function.h
 ```C
 #pragma once
 void square(float data);
