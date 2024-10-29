@@ -206,3 +206,83 @@ int main()
     printf("min_i=%i,min=%f", min_data.ind, min_data.min_f);
 }
 ```
+
+**範例6-5:運用ifdef來debug**
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "game_lib.h"
+#define _TEST_      //註解掉看看會發生甚麼事情
+
+int main()
+{
+    min_arrary a;
+    index_num min_data;
+#ifdef _TEST_                          //註解掉#define _TEST_ 電腦會把ifdef到endif中間包起來的部分註解掉不執行
+    srand(time(NULL));  //抓電腦時間
+#endif
+    a.N = 3;
+
+    for (int i = 0; i < a.N; i++)
+    {
+        a.f[i] = rand() % 10;
+        printf("a%i=%.2f\n", i + 1, a.f[i]);
+    }
+
+    min_data = min(a);
+    printf("min_i=%i,min=%f", min_data.ind + 1, min_data.min_f);
+}
+```
+game_lib.cpp(函式寫在這裡面)
+```C
+#include "game_lib.h"  //把header file引進來
+
+index_num min(min_arrary input)
+{
+    index_num output;
+    output.min_f = input.f[0];
+    output.ind = 0;
+    for (int i = 1; i < 3; i++)
+    {
+        if (input.f[i] < output.min_f)
+        {
+            output.min_f = input.f[i];
+            output.ind = i;
+        }
+    }
+
+    return output;
+}
+```
+**範例6-6:extern variables**
+
+main.cpp
+```C
+#include <stdio.h>
+#include "S_function.h"
+float out_data;
+
+int main()
+{
+    float a = 2.0;
+    square(2);
+    printf("a=%.1f, a^2=%.1f\n", a, out_data);
+}
+```
+
+S_function.h(用來存資料、宣告函式)
+```C
+#pragma once
+void square(float data);
+extern float out_data;
+```
+
+S_function.cpp(函式寫在這裡面)
+```C
+#include "S_function.h"
+void square(float data)
+{
+	out_data = data * data;
+}
+```
