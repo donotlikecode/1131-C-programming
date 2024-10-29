@@ -19,7 +19,7 @@ int main(void)
 }
 ```
 
-**投骰子60000000次看看有沒有隨機**
+**投骰子60000000次看機率有沒有真的差不多**
 ```c
 #include <stdio.h>
 #include <stdlib.h>
