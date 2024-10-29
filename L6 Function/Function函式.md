@@ -274,6 +274,7 @@ index_num min(min_arrary);
 **範例6-6:extern variables**
 
 main.cpp
+
 ```C
 #include <stdio.h>
 #include "S_function.h"
@@ -288,6 +289,7 @@ int main()
 ```
 
 S_function.h
+
 ```C
 #pragma once
 void square(float data);
@@ -295,6 +297,7 @@ extern float out_data;
 ```
 
 S_function.cpp(函式寫在這裡面)
+
 ```C
 #include "S_function.h"
 void square(float data)
