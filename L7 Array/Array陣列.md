@@ -8,7 +8,7 @@ int main()
 {
     //兩種initialization array的方法
     //只能在宣告的時候給值 如果已經給名稱沒有宣告裡面的東西 就只能用迴圈去用
-    int a[5] = { 1, 3, 5, 7, 9 };
+    int a[5] = { 1, 3, 5, 7, 9 }; //多一個compiler就不給過了
     int b[] = { 2, 4, 6, 8, 10, 12 };
     for (int i = 0; i < 5; i++) {
         printf("a%i=%i\n", i, a[i]);
