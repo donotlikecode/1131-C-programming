@@ -57,7 +57,6 @@ float max(float a[3])     //輸入array 每個都是浮點數  輸出也是一�
 **範例6-2:從別的地方引入函式**
 ```C
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 
