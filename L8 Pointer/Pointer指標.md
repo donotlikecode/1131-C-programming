@@ -110,3 +110,102 @@ countAddr = &countB; //把countAddr存countB的位址
 *countAddr = 0; //相當於把countB設成0
 
 ```
+
+**指標與函式呼叫**
+```c
+//變數不會被改~~
+#include <stdio.h>
+void addone(int n)
+{
+n = n + 1;  //獲得的是複製品所以沒辦法改到本尊
+}
+int main(){
+ int a = 3;
+ addone(a);  //複製a的值給addone
+ printf("%d", a); //a還是3
+}
+```
+直接複製位址的話!!!
+```c
+
+#include <stdio.h>
+void addone(int *n)
+{
+*n = *n + 1;  //把a的位址加星號就得到a的值然後+1存到a的位址
+}
+int main(){
+ int a = 3;
+ addone(&a);  //複製a的記憶體位址給addone
+ printf("%d", a); //a變成4
+}
+```
+
+**EX 數值交換**  
+寫一個函式swap,將輸入的兩個整數變數的值交換 
+```c
+#include <stdio.h>
+void swap(int* , int*);
+
+int main()
+{
+	int a = 3, b = 5;
+	swap(&a, &b);
+	/* int t = a; //先把a存起來
+	a = b //a變成b
+	b = t; //存起來的a給b */
+	printf("a: %d\n", a);
+	printf("b: %d\n", b); 
+}
+
+void swap(int* a, int* b) {
+	int t = *a;
+	*a = *b;
+	*b = t;
+	//沒有要回傳 可以省略return
+}
+//https://www.youtube.com/watch?v=cvZ8XH9m4aY&list=PLY_qIufNHc293YnIjVeEwNDuqGo8y2Emx&index=156
+```
+
+**EX 使用函式排序兩個變數** 
+寫一個sort函式將輸入的兩個整數依值排序
+```c
+#include <stdio.h>
+int main(){
+	int a = 5, b = 3;
+ if( a > b){
+	int t = a; //先把a存起來
+	a = b //a變成b
+	b = t; //存起來的a給b 
+}
+	
+	printf("a: %d\n", a);
+	printf("b: %d\n", b); 
+}
+```
+
+```c
+#include <stdio.h>
+void swap(int*, int*);
+void sort(int* ,int*);
+
+int main() {
+	int a = 5, b = 3;
+	sort(&a, &b);
+	printf("a: %d\n", a);
+	printf("b: %d\n", b);
+}
+
+void sort(int *a, int *b) {
+	if (*a > *b) {
+		swap(&*a, &*b); //swap(a, b)
+	}
+}
+
+void swap(int* a, int* b) {
+	int t = *a; //先把a存起來
+	*a = *b; //a變成b
+ *b = t;  //存起來的a給b 
+}
+```
+
+
